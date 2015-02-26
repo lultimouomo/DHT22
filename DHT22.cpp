@@ -27,8 +27,8 @@ DHT22::DHT22(int pin):
 
 void DHT22::delayus(uint16_t us)
 {
-	uint16_t usStart = (uint16_t)micros();
-	while (((uint16_t)micros() - usStart) < us) {	} // delay us
+    uint16_t usStart = (uint16_t)micros();
+    while (((uint16_t)micros() - usStart) < us) {   } // delay us
 }
 
 bool DHT22::startRead() {
@@ -40,15 +40,15 @@ bool DHT22::startRead() {
         _byte = 0;
 
         // Trigger the sensor
-		_state = Invalid;
+        _state = Invalid;
         pinMode(_pin, OUTPUT);
         digitalWrite(_pin, LOW);
         DHT22::delayus(Trigger::low);
         pinMode(_pin, INPUT_PULLUP);
-		DHT22::delayus(Trigger::high);
-		_lastEdge = micros();
-		_state = WakingUp;
-		return true;
+        DHT22::delayus(Trigger::high);
+        _lastEdge = micros();
+        _state = WakingUp;
+        return true;
     }
     return false;
 }
@@ -84,10 +84,10 @@ void DHT22::onFallingEdge() {
                         _state = Invalid;
                     } else {
                         _humidity = word(_data[0], _data[1]) * 0.1;
-						_temp = (_data[2] & 0x80 ?
-									-word(_data[2] & 0x7F, _data[3]) :
-									word(_data[2], _data[3])
-								) * 0.1;
+                        _temp = (_data[2] & 0x80 ?
+                                    -word(_data[2] & 0x7F, _data[3]) :
+                                    word(_data[2], _data[3])
+                                ) * 0.1;
                         _result = Ok;
                         _state = Done;
                     }
