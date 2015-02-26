@@ -14,7 +14,7 @@ PortStatusStruct PortStatus[sizeof(pinIntConfig)]; // Each PortStatus index will
 
 int userCommand;
 void setup() {
-  Serial.begin(230400);
+  Serial.begin(9600);
 
   pinInit();
   
