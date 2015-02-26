@@ -1,5 +1,14 @@
-#include <stdint.h>
 
+
+#if ARDUINO < 100
+#include <WProgram.h>
+#include <pins_arduino.h>  // fix for broken pre 1.0 version - TODO TEST
+#else
+#include <Arduino.h>
+#endif
+
+#ifndef dht22_h
+#define dht22_h
 /*!
  * \brief An interrupt-driven library for the DHT22 sensor
  *
@@ -32,19 +41,47 @@
  * }
  *
  * void loop() {
- *     if (dht.blockingRead() == DHT22::Ok) {
- *         Serial.print("Temperature: ");
- *         Serial.print(dht.getTemp()/10.0);
- *         Serial.println("C");
- *         Serial.print("Humidity: ");
- *         Serial.print(dht.getHumidity()/10.0);
- *         Serial.println("%");
+ *   uint32_t start = micros();
+ *   if (dht.blockingRead() == DHT22::Ok) {
+ *       uint32_t stop = micros();
+ *       Serial.print("Temperature: ");
+ *       Serial.print(dht.getTemp(),1);
+ *       Serial.println("C");
+ *       Serial.print("Humidity: ");
+ *       Serial.print(dht.getHumidity(),1);
+ *       Serial.println("%");
+ *       Serial.print("Read Time: ");
+ *       Serial.println(stop - start);
+ *   } else {
+ *     switch (dht.lastResult())
+ *     {
+ *       case DHT22::Ok:
+ *         Serial.println("Ok");
+ *         break;
+ *       case DHT22::None:
+ *         Serial.println("None");
+ *         break;
+ *       case DHT22::ChecksumMismatch:
+ *         Serial.println("CRC error");
+ *         break;
+ *       case DHT22::WakeUpError:
+ *         Serial.println("WakeUp error");
+ *         break;
+ *       case DHT22::DataError:
+ *         Serial.println("Data Error");
+ *         break;
+ *       default: 
+ *         Serial.print("Unknown error"); 
+ *         break;
  *     }
+ * }
+ *
  *     // Minimum interval between reads.
  *     delay(2000);
  * }
  * \endcode
  */
+
 class DHT22
 {
 public:
@@ -91,12 +128,12 @@ public:
      * \brief The last temperature reading
      * \return The temperature in tents of Celsius degree
      */
-    uint16_t getTemp();
+    float getTemp();
     /*!
      * \brief The last humidity reading
      * \return The relative humidity in per mil
      */
-    uint16_t getHumidity();
+    float getHumidity();
     /*!
      * \brief The sensor status
      */
@@ -106,6 +143,7 @@ public:
      */
     Result lastResult();
 private:
+    void delayus(uint16_t us);
     int _pin;
     volatile Status  _state;
     volatile Result _result;
@@ -116,3 +154,4 @@ private:
     volatile float _humidity;
     volatile float _temp;
 };
+#endif
