@@ -155,7 +155,7 @@ byte pinGetPortValue(byte portId)
 // Interrupt on Pin Change PCINT0..PCINT7 (D8 to D13)
 ISR(PCINT0_vect)
 {
-  if ((PortStatus[0].portMaskBit & PINB) >> (PortStatus[0].portMaskBit - 1) == 0) { // Detect if PortStatus[1] of DHT sensor got low.
+  if ((PortStatus[0].portMaskBit & PINB) >> (PortStatus[0].portMaskBit - 1) == 0) { // Detect if PortStatus[0] of DHT sensor got low.
      Dht.onFallingEdge();
   }
 
