@@ -1,6 +1,6 @@
 #include <DHT22.h>
 
-#define DHT_PIN 9     // On Arduino Uno, interrupt 0 is attached to pin 2  
+#define DHT_PIN 2     // On Arduino Uno, interrupt 0 is attached to pin 2  
 DHT22 dht(DHT_PIN);
 
 void dhtISR() {
