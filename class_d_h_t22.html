@@ -91,9 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afefb119c09c74ce2e04dbdcb6e77abb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_h_t22.html#afefb119c09c74ce2e04dbdcb6e77abb5">blockingRead</a> ()</td></tr>
 <tr class="memdesc:afefb119c09c74ce2e04dbdcb6e77abb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts reading, if necessary, and waits for result.  <a href="#afefb119c09c74ce2e04dbdcb6e77abb5">More...</a><br /></td></tr>
 <tr class="separator:afefb119c09c74ce2e04dbdcb6e77abb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f6da0fb04e4357b072c415507faf8fb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_h_t22.html#a7f6da0fb04e4357b072c415507faf8fb">getTemp</a> ()</td></tr>
-<tr class="memdesc:a7f6da0fb04e4357b072c415507faf8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The last temperature reading.  <a href="#a7f6da0fb04e4357b072c415507faf8fb">More...</a><br /></td></tr>
-<tr class="separator:a7f6da0fb04e4357b072c415507faf8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74b6c4fd246e9f6029316eeebc607e6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_h_t22.html#ae74b6c4fd246e9f6029316eeebc607e6">getTemp</a> ()</td></tr>
+<tr class="memdesc:ae74b6c4fd246e9f6029316eeebc607e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The last temperature reading.  <a href="#ae74b6c4fd246e9f6029316eeebc607e6">More...</a><br /></td></tr>
+<tr class="separator:ae74b6c4fd246e9f6029316eeebc607e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44fbf7a143061f91809ed60412b792b5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_h_t22.html#a44fbf7a143061f91809ed60412b792b5">getHumidity</a> ()</td></tr>
 <tr class="memdesc:a44fbf7a143061f91809ed60412b792b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The last humidity reading.  <a href="#a44fbf7a143061f91809ed60412b792b5">More...</a><br /></td></tr>
 <tr class="separator:a44fbf7a143061f91809ed60412b792b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>An interrupt-driven library for the <a class="el" href="class_d_h_t22.html" title="An interrupt-driven library for the DHT22 sensor. ">DHT22</a> sensor. </p>
 <p>This class provides an interrupt-driven interface to the <a class="el" href="class_d_h_t22.html" title="An interrupt-driven library for the DHT22 sensor. ">DHT22</a> sensor. The user must attach an ISR to the falling edge of the <a class="el" href="class_d_h_t22.html" title="An interrupt-driven library for the DHT22 sensor. ">DHT22</a> data pin and invoke <a class="el" href="class_d_h_t22.html#ae19ceaa13c367433e799ab72550a3008" title="Signals the library that the data pin has gone low. ">onFallingEdge()</a> in the ISR.</p>
 <p>Reading can be started with <a class="el" href="class_d_h_t22.html#a78ed51db3cf7d0c2fe4aee6fc71b3828" title="Wakes up the sensor and starts waiting for data. ">startRead()</a>, which returns immediately, or <a class="el" href="class_d_h_t22.html#afefb119c09c74ce2e04dbdcb6e77abb5" title="Starts reading, if necessary, and waits for result. ">blockingRead()</a>, which waits for the reading to complete.</p>
-<p>If <a class="el" href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163" title="The sensor status. ">state()</a> returns <a class="el" href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24cac5f65df691c3d27deafef99c8e0260dc" title="Data was successfully read. ">Done</a>, the data has been read and can be accessed with <a class="el" href="class_d_h_t22.html#a7f6da0fb04e4357b072c415507faf8fb" title="The last temperature reading. ">getTemp()</a> and <a class="el" href="class_d_h_t22.html#a44fbf7a143061f91809ed60412b792b5" title="The last humidity reading. ">getHumidity()</a>. Be aware of the measuring units!! If <a class="el" href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163" title="The sensor status. ">state()</a> returns <a class="el" href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24ca1693edd4df96267db67e8f644aee67e2" title="Data reading failed or was never attempted. ">Invalid</a>, <a class="el" href="class_d_h_t22.html#af6df70b2cb6efdbca7b38c961f9d5aa2" title="The result of the last reading. ">lastResult()</a> can give some information on the cause.</p>
+<p>If <a class="el" href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163" title="The sensor status. ">state()</a> returns <a class="el" href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24cac5f65df691c3d27deafef99c8e0260dc" title="Data was successfully read. ">Done</a>, the data has been read and can be accessed with <a class="el" href="class_d_h_t22.html#ae74b6c4fd246e9f6029316eeebc607e6" title="The last temperature reading. ">getTemp()</a> and <a class="el" href="class_d_h_t22.html#a44fbf7a143061f91809ed60412b792b5" title="The last humidity reading. ">getHumidity()</a>. Be aware of the measuring units!! If <a class="el" href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163" title="The sensor status. ">state()</a> returns <a class="el" href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24ca1693edd4df96267db67e8f644aee67e2" title="Data reading failed or was never attempted. ">Invalid</a>, <a class="el" href="class_d_h_t22.html#af6df70b2cb6efdbca7b38c961f9d5aa2" title="The result of the last reading. ">lastResult()</a> can give some information on the cause.</p>
 <p>Usage example: </p><div class="fragment"><div class="line"><a class="code" href="class_d_h_t22.html">DHT22</a> dht(2);</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> dhtISR() {</div>
@@ -257,12 +257,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7f6da0fb04e4357b072c415507faf8fb"></a>
+<a class="anchor" id="ae74b6c4fd246e9f6029316eeebc607e6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t DHT22::getTemp </td>
+          <td class="memname">int16_t DHT22::getTemp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -351,7 +351,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2014 22:31:47 for DHT22 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 21 2015 14:10:44 for DHT22 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

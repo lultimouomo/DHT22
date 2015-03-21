@@ -68,7 +68,7 @@
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_d_h_t22.html#ae19ceaa13c367433e799ab72550a3008">onFallingEdge</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_d_h_t22.html#a78ed51db3cf7d0c2fe4aee6fc71b3828">startRead</a>();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14">Result</a> <a class="code" href="class_d_h_t22.html#afefb119c09c74ce2e04dbdcb6e77abb5">blockingRead</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint16_t <a class="code" href="class_d_h_t22.html#a7f6da0fb04e4357b072c415507faf8fb">getTemp</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    int16_t <a class="code" href="class_d_h_t22.html#ae74b6c4fd246e9f6029316eeebc607e6">getTemp</a>();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint16_t <a class="code" href="class_d_h_t22.html#a44fbf7a143061f91809ed60412b792b5">getHumidity</a>();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24c">Status</a> <a class="code" href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163">state</a>();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14">Result</a> <a class="code" href="class_d_h_t22.html#af6df70b2cb6efdbca7b38c961f9d5aa2">lastResult</a>();</div>
@@ -80,8 +80,8 @@
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">volatile</span> uint8_t _bit;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">volatile</span> uint8_t _byte;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> _lastEdge;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">float</span> _humidity;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">float</span> _temp;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">volatile</span> uint16_t _humidity;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">volatile</span> int16_t _temp;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
 <div class="ttc" id="class_d_h_t22_html_a711a997c2f1b2a28f3659e6c98e67d14a31980341579ee65dad347869ac08f11f"><div class="ttname"><a href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14a31980341579ee65dad347869ac08f11f">DHT22::None</a></div><div class="ttdoc">Data has never been read. </div><div class="ttdef"><b>Definition:</b> DHT22.h:55</div></div>
 <div class="ttc" id="class_d_h_t22_html_a4b4eb19accfe125916353039514fd24cac2449f4939399c993f96fe92a392881b"><div class="ttname"><a href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24cac2449f4939399c993f96fe92a392881b">DHT22::WakingUp</a></div><div class="ttdoc">The sensor is waking up. </div><div class="ttdef"><b>Definition:</b> DHT22.h:65</div></div>
@@ -90,6 +90,7 @@
 <div class="ttc" id="class_d_h_t22_html_a0df9312bbe451b7774d9cd8433b23ddc"><div class="ttname"><a href="class_d_h_t22.html#a0df9312bbe451b7774d9cd8433b23ddc">DHT22::DHT22</a></div><div class="ttdeci">DHT22(int pin)</div><div class="ttdoc">Construct a DHT22 library instance. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:20</div></div>
 <div class="ttc" id="class_d_h_t22_html_a711a997c2f1b2a28f3659e6c98e67d14a144ec295a408043789a90009880aa7ac"><div class="ttname"><a href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14a144ec295a408043789a90009880aa7ac">DHT22::WakeUpError</a></div><div class="ttdoc">There was a protocol timing error during the sensor wake-up. </div><div class="ttdef"><b>Definition:</b> DHT22.h:58</div></div>
 <div class="ttc" id="class_d_h_t22_html_a4b4eb19accfe125916353039514fd24c"><div class="ttname"><a href="class_d_h_t22.html#a4b4eb19accfe125916353039514fd24c">DHT22::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">The status of the library state machine. </div><div class="ttdef"><b>Definition:</b> DHT22.h:64</div></div>
+<div class="ttc" id="class_d_h_t22_html_ae74b6c4fd246e9f6029316eeebc607e6"><div class="ttname"><a href="class_d_h_t22.html#ae74b6c4fd246e9f6029316eeebc607e6">DHT22::getTemp</a></div><div class="ttdeci">int16_t getTemp()</div><div class="ttdoc">The last temperature reading. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:109</div></div>
 <div class="ttc" id="class_d_h_t22_html_ab831482beeba51558951e33e31c24163"><div class="ttname"><a href="class_d_h_t22.html#ab831482beeba51558951e33e31c24163">DHT22::state</a></div><div class="ttdeci">Status state()</div><div class="ttdoc">The sensor status. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:101</div></div>
 <div class="ttc" id="class_d_h_t22_html_ae19ceaa13c367433e799ab72550a3008"><div class="ttname"><a href="class_d_h_t22.html#ae19ceaa13c367433e799ab72550a3008">DHT22::onFallingEdge</a></div><div class="ttdeci">void onFallingEdge()</div><div class="ttdoc">Signals the library that the data pin has gone low. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:57</div></div>
 <div class="ttc" id="class_d_h_t22_html_a44fbf7a143061f91809ed60412b792b5"><div class="ttname"><a href="class_d_h_t22.html#a44fbf7a143061f91809ed60412b792b5">DHT22::getHumidity</a></div><div class="ttdeci">uint16_t getHumidity()</div><div class="ttdoc">The last humidity reading. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:113</div></div>
@@ -102,11 +103,10 @@
 <div class="ttc" id="class_d_h_t22_html_a711a997c2f1b2a28f3659e6c98e67d14"><div class="ttname"><a href="class_d_h_t22.html#a711a997c2f1b2a28f3659e6c98e67d14">DHT22::Result</a></div><div class="ttdeci">Result</div><div class="ttdoc">Possible result values. </div><div class="ttdef"><b>Definition:</b> DHT22.h:54</div></div>
 <div class="ttc" id="class_d_h_t22_html_a78ed51db3cf7d0c2fe4aee6fc71b3828"><div class="ttname"><a href="class_d_h_t22.html#a78ed51db3cf7d0c2fe4aee6fc71b3828">DHT22::startRead</a></div><div class="ttdeci">bool startRead()</div><div class="ttdoc">Wakes up the sensor and starts waiting for data. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:29</div></div>
 <div class="ttc" id="class_d_h_t22_html_af6df70b2cb6efdbca7b38c961f9d5aa2"><div class="ttname"><a href="class_d_h_t22.html#af6df70b2cb6efdbca7b38c961f9d5aa2">DHT22::lastResult</a></div><div class="ttdeci">Result lastResult()</div><div class="ttdoc">The result of the last reading. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:105</div></div>
-<div class="ttc" id="class_d_h_t22_html_a7f6da0fb04e4357b072c415507faf8fb"><div class="ttname"><a href="class_d_h_t22.html#a7f6da0fb04e4357b072c415507faf8fb">DHT22::getTemp</a></div><div class="ttdeci">uint16_t getTemp()</div><div class="ttdoc">The last temperature reading. </div><div class="ttdef"><b>Definition:</b> DHT22.cpp:109</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2014 22:31:47 for DHT22 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 21 2015 14:10:44 for DHT22 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
