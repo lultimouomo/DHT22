@@ -113,6 +113,6 @@ private:
     volatile uint8_t _bit;
     volatile uint8_t _byte;
     volatile unsigned long _lastEdge;
-    volatile float _humidity;
-    volatile float _temp;
+    volatile uint16_t _humidity;
+    volatile int16_t _temp;
 };
