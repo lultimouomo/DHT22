@@ -91,7 +91,7 @@ public:
      * \brief The last temperature reading
      * \return The temperature in tents of Celsius degree
      */
-    uint16_t getTemp();
+    int16_t getTemp();
     /*!
      * \brief The last humidity reading
      * \return The relative humidity in per mil

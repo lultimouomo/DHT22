@@ -106,7 +106,7 @@ DHT22::Result DHT22::lastResult() {
     return _result;
 }
 
-uint16_t DHT22::getTemp() {
+int16_t DHT22::getTemp() {
     return _temp;
 }
 
